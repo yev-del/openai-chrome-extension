@@ -11,21 +11,19 @@ A Chrome extension for chatting with OpenAI's GPT models directly from your brow
 - Secure API key storage
 
 ## Project Structure
-
-project/
-├── icons/
-│ ├── icon16.png
-│ ├── icon48.png
-│ └── icon128.png
-├── lib/
-│ ├── default.min.css
-│ ├── highlight.min.js
-│ └── marked.min.js
-├── background.js
-├── popup.html
-├── popup.js
-├── styles.css
-└── README.md
+- icons/
+  - icon16.png
+  - icon48.png
+  - icon128.png
+- lib/
+  - default.min.css
+  - highlight.min.js
+  - marked.min.js
+- background.js
+- popup.html
+- popup.js
+- styles.css
+- README.md
 
 ## Installation
 1. Clone this repository
@@ -36,8 +34,25 @@ project/
 
 ## Usage
 1. Click the extension icon in Chrome
-2. Enter your OpenAI API key in settings
-3. Start chatting with the AI
+2. Enter your OpenAI API key in settings (you can get it from OpenAI dashboard)
+3. Choose your preferred model (GPT-3.5 or GPT-4)
+4. Start chatting with the AI
+5. Use settings to customize theme and accent colors
+
+## Development
+The extension is built using:
+- HTML/CSS/JavaScript
+- Chrome Extension Manifest V3
+- OpenAI API
+- Marked.js for Markdown rendering
+- Highlight.js for code syntax highlighting
+
+## Future Improvements
+- Support for more OpenAI models
+- Chat history export/import
+- Custom system prompts
+- Message formatting options
+- Conversation templates
 
 ## License
 MIT
