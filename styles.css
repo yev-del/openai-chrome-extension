@@ -1,0 +1,305 @@
+/* Import custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap');
+
+/* Root variables for theme customization */
+:root {
+    --accent-color: #10A37F;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Dark theme overrides */
+body.dark {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+}
+
+/* Base body styles */
+body {
+    width: 650px;
+    height: 550px;
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+/* Main container layout */
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+
+/* Header section styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Model selector dropdown styles */
+#model-select {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--text-secondary);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    height: 36px;
+}
+
+/* Header button styles */
+.header-actions button {
+    padding: 8px;
+    height: 36px;
+    width: 36px;
+}
+
+/* Chat container styles */
+#chat-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+/* Message styles */
+.message {
+    max-width: 85%;
+    margin: 8px 0;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.user-message {
+    background-color: var(--accent-color);
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+}
+
+.assistant-message {
+    background-color: var(--bg-primary);
+    border-bottom-left-radius: 4px;
+}
+
+/* Input area styles */
+.input-container {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--text-secondary);
+    border-radius: 8px;
+    resize: none;
+    height: 24px;
+    max-height: 120px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Button styles */
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Settings panel styles */
+#settings-panel {
+    position: absolute;
+    top: 50px;
+    left: 12px;
+    right: 12px;
+    background-color: var(--bg-primary);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    border: 1px solid var(--text-secondary);
+    max-width: calc(100% - 24px);
+    box-sizing: border-box;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+#settings-panel.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Settings groups and rows */
+.settings-group {
+    margin-bottom: 20px;
+}
+
+.settings-group.compact {
+    margin-bottom: 0;
+    min-width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-row {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* Form elements in settings */
+.settings-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.settings-group input[type="text"] {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--text-secondary);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    height: 36px;
+    box-sizing: border-box;
+    margin-bottom: 4px;
+}
+
+/* Color palette styles */
+.color-palette-wrapper {
+    display: flex;
+    align-items: center;
+    height: 38px;
+}
+
+.color-palette {
+    display: flex;
+    gap: 6px;
+}
+
+.color-option {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.selected {
+    border-color: var(--text-primary);
+}
+
+/* Notification styles */
+.notification {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2000;
+}
+
+.notification.show {
+    opacity: 1;
+}
+
+.notification.hidden {
+    display: none;
+}
+
+/* Utility classes */
+.hidden {
+    display: none;
+}
+
+/* API key notice styles */
+.api-key-notice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding: 4px 0;
+}
+
+/* Text button styles */
+.text-button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+    transform: none;
+    margin-left: 8px;
+}
+
+.text-button:hover {
+    color: var(--text-primary);
+    opacity: 1;
+}
